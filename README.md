@@ -1,13 +1,17 @@
 ## 📌  Introduction
 
-This is a fork of the [lightning-hydra-template](https://github.com/ashleve/lightning-hydra-template) adjusted to my needs. This template is supposed to make it easier to start deep learning project following a streamlined process as outlined by Prof. Niessner in  [this](https://x.com/MattNiessner/status/1441027241870118913) tweet. I also aim to incorporate other best practices when deemed useful. Please check out the orginal template for more information on faetures and how to use it.
+This is a fork of the [lightning-hydra-template](https://github.com/ashleve/lightning-hydra-template) adjusted to my needs. This template is supposed to make it easier to start deep learning project following a streamlined process as outlined by Prof. Niessner in  [this](https://x.com/MattNiessner/status/1441027241870118913) tweet. I also aim to incorporate other best practices when deemed useful. Please check out the original template for more information on features and how to use it.
 
-I tried to create a basic checklist to aid the development workflow for your deep learning project - however note that this is always highly linear and you will often have to deviate from it. 
+I tried to create a basic checklist to aid the development workflow for your deep learning project - however note that this is always highly linear and you will often have to deviate from it.
 
----
+**Disclaimer**: This is a WIP that I will continuously update while interacting with the repository.
+
+______________________________________________________________________
 
 ## Stage 1 - Overfitting
+
 In this stage, we are trying to verify that the data loading and basic optimization works. It is crucial to start with a simple setup to identify potential issues early on.
+
 - [ ] Implement DataModule (+ config file)
 - [ ] Implement LightningModule (+ config file)
 - [ ] Create config file in experiment/overfit_single (disable any fancy features)
@@ -22,20 +26,30 @@ python src/train.py experiment=overfit_batch/${experiment_name}
 ```
 
 ## Stage 2 - Fast Experimentation
+
 Now that the basic opitmization works, it is time to start some experiments. This stage is all about fast iterations and identifying the most promising directions. Generally, stay with a small model architecture at this stage (see also this [tweet](https://x.com/gabriberton/status/1797274445213466786)).
+
 - [ ] Make Training loop fast (identify bottlenecks)
+
 ```bash
 python src/train.py experiment=train/${experiment_name} debug=simple_profiler
 ```
+
 - [ ] Add additional metrics to log
 - [ ] Run experiments with different hyperparameters (kill early if not promising)
 
 ## Stage 3 - Scaling up
+
 Finally, it is time to scale up the model size and add more advanced features to your model to help with generalization.
 
----
+______________________________________________________________________
 
 This should provide you with a high-level overview of how to approach a Deep Learning Project. Obviously, this is a very non-linear process and you will deviate from it - regard it as a rough guideline.
+
+# How to get started
+
+1. Start by installing the required packages and put them in `requirements.txt` file
+2. Add automatic code formatting by running pre-commit install
 
 **DELETE EVERYTHING ABOVE FOR YOUR PROJECT**
 
