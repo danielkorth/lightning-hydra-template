@@ -10,6 +10,6 @@ trainer:
   profiler:
     _target_: lightning.pytorch.profilers.AdvancedProfiler
     dirpath: ${paths.output_dir}/profiler
-    filename: advanced_profiler 
+    filename: advanced_profiler
 
 test: False

@@ -21,8 +21,7 @@ In this stage, we are trying to verify that the data loading and basic optimizat
 
 ```bash
 # to run the overfitting experiments
-python src/train.py experiment=overfit_single/${experiment_name}
-python src/train.py experiment=overfit_batch/${experiment_name}
+python src/train.py debug=overfit data.batch_size=1
 ```
 
 ## Stage 2 - Fast Experimentation
@@ -50,6 +49,7 @@ This should provide you with a high-level overview of how to approach a Deep Lea
 
 1. Start by installing the required packages and put them in `requirements.txt` file
 2. Add automatic code formatting by running pre-commit install
+3. Run formatting using `make format`
 
 **DELETE EVERYTHING ABOVE FOR YOUR PROJECT**
 
